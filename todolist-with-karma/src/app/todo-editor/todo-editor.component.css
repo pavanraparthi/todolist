@@ -1,0 +1,25 @@
+.todo-editor
+{
+	border: 1px solid #000;
+	padding: 10px;
+}
+
+.todo-edit
+{
+	position: relative;
+}
+
+.item-group
+{
+	max-width: 350px;
+	width: 100%;
+    float: left;
+}
+
+.form-header
+{
+	font-size: 20px;
+	text-align: left;
+	margin: 20px 0px;
+}
+

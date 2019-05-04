@@ -1,0 +1,19 @@
+.list-holder
+{
+	width: 475px;
+	margin: 10px;
+}
+
+.list-header span
+{
+	padding: 2px 15px ;
+}
+
+.list-header
+{
+	background-color: #00bcd4;
+}
+.list-header span, .list-header input
+{
+	margin-right: 20px;
+}

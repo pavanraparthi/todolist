@@ -1,0 +1,20 @@
+<div class='todo-editor'>
+	<div class="form-header">{{formTitle}}</div>
+	<form [formGroup]='todoItem'>
+		<div class='todo-edit'>
+			<div formGroupName='itemInfo' class="item-group">
+				<input type="text" placeholder="Task Name" formControlName="name" [(ngModel)]="dataBind.itemInfo.name">
+				<input type="text" placeholder="Task Description" formControlName="desc" [(ngModel)]="dataBind.itemInfo.desc">
+			</div>
+			<select formControlName='priority' [(ngModel)]="dataBind.priority">
+				<option *ngFor='let p of priorityList' [ngValue]='p'>{{ p }}</option>
+			</select>
+			<div style="display: inline; padding: 10px" *ngIf="isInEditMode">
+				<span>Change Complete state to </span>
+				<input type="submit" name="completeState" value="{{dataBind.isCompleted ? 'Not Completed' : 'Completed'}}" 
+				(click)='onToggleCompleteState()'>
+			</div>
+			<input type="submit" name="Add Item" value="{{isInEditMode ? 'Update' : 'Add Item'}}" [disabled]='!todoItem.valid || (isInEditMode && !isEdited)' (click)='onSubmit()'>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,11 @@
+<div [ngClass]='["item", (itemObj.isCompleted ? "item-complete" : "")]' >
+	<div style="display: inline;" (click)="onItemSelect()">
+		<span>{{itemObj.name}}</span>
+		<span>{{itemObj.desc}}</span>
+		<span [ngClass]="itemObj.priority">{{itemObj.priority | uppercase}}</span>
+		<span *ngIf="itemObj.isCompleted">Completed</span>
+	</div>
+	<div style="display: inline;" *ngIf="!itemObj.isCompleted">
+		<span class="fa fa-trash" (click)="deleteItem()"></span>
+	</div>
+</div>

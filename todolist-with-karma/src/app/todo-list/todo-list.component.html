@@ -1,0 +1,12 @@
+<div class='list-holder'>
+	<div class='list-header' *ngIf='todos && todos.length > 0'>
+		<span>Name</span>
+		<span>Description</span>
+		<span>Priority</span>
+		<span>Status</span>
+	</div>
+	<div *ngIf='!todos || todos.length == 0'>
+		<span>No items found</span>
+	</div>
+	<app-todo-item *ngFor='let item of todos' [itemObj]=item></app-todo-item>
+</div>
